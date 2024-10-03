@@ -4,8 +4,7 @@ echo "Mise à jour"
 pacman -Sy
 
 echo "Partitionnement, formatage, montage"
-fdisk
-fdisk
+sfdisk /dev/sda < sda.dump
 mkfs.ext4 /dev/sda2
 mkfs.fat -F 32 /dev/sda1
 mount /dev/sda2 /mnt
