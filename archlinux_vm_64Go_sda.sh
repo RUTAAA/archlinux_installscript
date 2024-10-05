@@ -33,7 +33,7 @@ ln -sf /mnt/usr/share/zoneinfo/Europe/Paris /mnt/etc/localtime
 arch-chroot /mnt hwclock --systohc
 
 echo "GRUB bootloader"
-arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
+arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "Terminé!"
