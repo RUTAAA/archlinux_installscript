@@ -1,7 +1,7 @@
 #!/bin/bash
 
 read -p "User to create: " userneame
-read -p "Password of ${username}:" password
+read -p "Password of this user: " password
 
 echo "Update"
 pacman -Sy
