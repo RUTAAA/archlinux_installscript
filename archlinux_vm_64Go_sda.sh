@@ -36,7 +36,10 @@ ln -sf /mnt/usr/share/zoneinfo/Europe/Paris /mnt/etc/localtime
 arch-chroot /mnt hwclock --systohc
 
 echo "User creation"
-arch-chroot /mnt useradd $username --groups wheel --create-home --password $password --shell /bin/bash
+arch-chroot /mnt echo $password | passwd $username --stdin
+arch-chroot /mnt useradd --groups wheel --create-home --shell /bin/bash $username
+arch-chroot /mnt echo $password | passwd $username --stdin
+sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /mnt/etc/sudoers
 
 echo "GRUB bootloader"
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
