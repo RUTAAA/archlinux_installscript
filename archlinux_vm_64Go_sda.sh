@@ -29,7 +29,9 @@ echo
 echo
 echo
 echo "Change root"
+cp ./chroot_script.sh /mnt/chroot_script.sh
 arch-chroot /mnt ./chroot_script.sh
+rm /mnt/chroot_script.sh
 
 echo
 echo
