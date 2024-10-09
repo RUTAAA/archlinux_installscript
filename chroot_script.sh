@@ -1,4 +1,12 @@
+read -p "New username: " username
+read -s -p "New user password: " password
 echo
+read -s -p "New root password: " root_password
+echo
+
+echo
+echo
+echoecho
 echo
 echo
 echo "Localization"
