@@ -36,7 +36,7 @@ echo
 echo
 echo "User and password"
 echo $root_password | passwd --stdin
-useradd --groups wheel --create-home --shell /bin/bash
+useradd --groups wheel --create-home --shell /bin/bash $username
 echo $password | passwd --stdin $username
 sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers
 
