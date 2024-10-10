@@ -1,11 +1,10 @@
 #!/bin/bash
 
-read -s -p "Password for new root" root_password
+read -s -p "Password for new root: " root_password
 echo
-read -p "Username for new user" username
-read -s -p "Password for new user" user_password
+read -p "Username for new user: " username
+read -s -p "Password for new user: " user_password
 echo
-read -p "Additional packages to install: " packages
 
 printf "\n\n\nUpdate"
 pacman -Sy
@@ -18,7 +17,7 @@ mount /dev/sda2 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
 
 printf "\n\n\nInstallation"
-pacstrap -K /mnt base linux linux-firmware grub efibootmgr base-devel nano $packages
+pacstrap -K /mnt base linux linux-firmware grub efibootmgr base-devel networkmanager nano
 
 printf "\n\n\nfstab"
 genfstab -U /mnt >> /mnt/etc/fstab
