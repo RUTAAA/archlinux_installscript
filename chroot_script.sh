@@ -10,7 +10,7 @@ printf "\n\n\nHostname"
 touch /etc/hostname
 echo "archlinux" > /etc/hostname
 
-printf "\n\n\n"Datetime"
+printf "\n\n\nDatetime"
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc
 
