@@ -32,19 +32,19 @@ printf "#!/bin/bash\nkillall -q polybar\npolybar mybar 2>&1 | tee -a /tmp/polyba
 chmod +x /home/$1/.config/polybar/launch.sh
 
 printf "\n\n\nRofi - Application Launcher"
-sed -i "s/dmenu_run/rofi --show drun/" /home/$1/.config/bspwm/sxhkdrc
+sed -i "s/dmenu_run/rofi --show drun/" /home/$1/.config/sxhkd/sxhkdrc
 
 printf "\n\n\nWezTerm - Terminal Emulator"
 mkdir /home/$1/.config/wezterm
 touch /home/$1/.config/wezterm/wezterm.lua
 printf "local wezterm = require 'wezterm'\nlocal config = wezterm.config_builder()\nreturn config" > /home/$1/.config/wezterm/wezterm.lua
-sed -i "s/urxvt/wezterm/" /home/$1/.config/bspwm/sxhkdrc
+sed -i "s/urxvt/wezterm/" /home/$1/.config/sxhkd/sxhkdrc
 
 printf "\n\n\nFirefox - Internet Browser"
 touch /home/$1/.config/sxhkd/sxhkdrc_new
 head -n 11 /home/$1/.config/sxhkd/sxhkdrc > /home/$1/.config/sxhkd/sxhkdrc_new
 echo -e "\n# internet browser\nsuper + b\n\tfirefox" >> /home/$1/.config/sxhkd/sxhkdrc_new
-sed -i "s/^/wezterm/" /home/$1/.config/bspwm/sxhkdrc
+sed -i "s/^/wezterm/" /home/$1/.config/sxhkd/sxhkdrc
 tail -n +12 /home/$1/.config/sxhkd/sxhkdrc >> /home/$1/.config/sxhkd/sxhkdrc_new
 rm /home/$1/.config/sxhkd/sxhkdrc
 mv /home/$1/.config/sxhkd/sxhkdrc_new /home/$1/.config/sxhkd/sxhkdrc
