@@ -27,7 +27,7 @@ printf "\n\n\nChange root"
 cp ./chroot_script.sh /mnt/chroot_script.sh
 arch-chroot /mnt ./chroot_script.sh $root_password $username $user_password
 rm /mnt/chroot_script.sh
-if [ $rice != "n" ]
+if [[ $rice != "n" ]]
 then
   cp ./ricing.sh /mnt/ricing.sh
   arch-chroot /mnt ./ricing.sh $username
