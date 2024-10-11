@@ -7,23 +7,23 @@ read -s -p "Password for new user: " user_password
 echo
 read -p "Configure the defaut rice? [Y/n] " rice
 
-printf "\n\n\nUpdate"
+printf "\n\n\nUpdate\n"
 pacman -Sy
 
-printf "\n\n\nDisk"
+printf "\n\n\nDisk\n"
 sfdisk /dev/sda < sda.dump
 mkfs.ext4 /dev/sda2
 mkfs.fat -F 32 /dev/sda1
 mount /dev/sda2 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
 
-printf "\n\n\nInstallation"
+printf "\n\n\nInstallation\n"
 pacstrap -K /mnt base linux linux-firmware grub efibootmgr base-devel networkmanager nano
 
-printf "\n\n\nfstab"
+printf "\n\n\nfstab\n"
 genfstab -U /mnt >> /mnt/etc/fstab
 
-printf "\n\n\nChange root"
+printf "\n\n\nChange root\n"
 cp ./chroot_script.sh /mnt/chroot_script.sh
 arch-chroot /mnt ./chroot_script.sh $root_password $username $user_password
 rm /mnt/chroot_script.sh
@@ -34,4 +34,4 @@ then
   rm /mnt/ricing.sh
 fi
 
-printf "\n\n\nTerminé!"
+printf "\n\n\nTerminé!\n"
