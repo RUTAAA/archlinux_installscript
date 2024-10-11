@@ -1,5 +1,5 @@
 printf "\n\n\nRicing installations"
-pacman -S xorg ly bspwm sxhkd picom feh polybar rofi wezterm firefox zsh ttf-nerd-fonts-symbols-mono
+pacman -S --noconfirm xorg ly bspwm sxhkd picom feh polybar rofi wezterm firefox zsh ttf-nerd-fonts-symbols-mono
 mkdir /home/$1/.config
 
 printf "\n\n\nX11 - Display Server"
