@@ -14,6 +14,9 @@ printf "\n\n\nDatetime"
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 hwclock --systohc
 
+printf "\n\n\nNetwork"
+systemctl enable NetworkManager.service
+
 printf "\n\n\nUser and password"
 echo $1 | passwd --stdin
 useradd --groups wheel --create-home --shell /bin/bash $2
