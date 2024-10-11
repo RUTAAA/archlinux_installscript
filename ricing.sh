@@ -2,7 +2,7 @@ printf "\n\n\nRicing installations"
 pacman -S --noconfirm xorg ly bspwm sxhkd picom feh polybar rofi wezterm firefox zsh ttf-nerd-fonts-symbols-mono
 
 printf "\n\n\nX11 - Display Server"
-setxkbmap fr
+localectl --no-convert set-x11-keymap fr pc105 azerty
 cp /etc/X11/xinit/xinitrc /home/$1/.xinitrc
 head -n -5 /home/$1/.xinitrc > /home/$1/.xinitrc
 echo "exec bspwm" >> /home/$1/.xinitrc
