@@ -1,6 +1,5 @@
 printf "\n\n\nRicing installations"
 pacman -S --noconfirm xorg ly bspwm sxhkd picom feh polybar rofi wezterm firefox zsh ttf-nerd-fonts-symbols-mono
-mkdir /home/$1/.config
 
 printf "\n\n\nX11 - Display Server"
 setxkbmap fr
@@ -12,10 +11,10 @@ printf "\n\n\nLy - Display Manager"
 systemctl enable ly.service
 
 printf "\n\n\nbspwm - Window Manager"
-install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
+install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc /home/$1/.config/bspwm/bspwmrc
 
 printf "\n\n\nsxhkd - Hotkey Deamon"
-install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
+install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc /home/$1/.config/sxhkd/sxhkdrc
 
 printf "\n\n\npicom - Compositor"
 echo "picom &" >> /home/$1/.config/bspwm/bspwmrc
