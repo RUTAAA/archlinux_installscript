@@ -5,6 +5,7 @@ echo
 read -p "Username for new user: " username
 read -s -p "Password for new user: " user_password
 echo
+read -p "Configure the defaut rice? [Y/n] " rice
 
 printf "\n\n\nUpdate"
 pacman -Sy
@@ -26,5 +27,11 @@ printf "\n\n\nChange root"
 cp ./chroot_script.sh /mnt/chroot_script.sh
 arch-chroot /mnt ./chroot_script.sh $root_password $username $user_password
 rm /mnt/chroot_script.sh
+if [ $rice != "n" ]
+then
+  cp ./ricing.sh /mnt/ricing.sh
+  arch-chroot /mnt ./ricing.sh $username
+  rm /mnt/ricing.sh
+fi
 
 printf "\n\n\nTerminé!"
