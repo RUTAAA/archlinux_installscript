@@ -34,6 +34,8 @@ chmod +x /home/$1/.config/polybar/launch.sh
 
 printf "\n\n\nRofi - Application Launcher"
 sed -i "s/dmenu_run/rofi --show drun/" /home/$1/.config/sxhkd/sxhkdrc
+sed -i "s/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/" /etc/locale.gen
+locale-gen
 
 printf "\n\n\nWezTerm - Terminal Emulator"
 mkdir /home/$1/.config/wezterm
