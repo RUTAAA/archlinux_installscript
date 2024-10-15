@@ -1,5 +1,5 @@
 printf "\n\n\nRicing installations\n"
-pacman -S --noconfirm xorg ly bspwm sxhkd picom feh polybar rofi wezterm firefox zsh ttf-nerd-fonts-symbols-mono
+pacman -S --noconfirm xorg-server xorg-xinit ly bspwm sxhkd picom feh polybar rofi wezterm firefox zsh ttf-nerd-fonts-symbols-mono
 
 printf "\n\n\nX11 - Display Server\n"
 touch /etc/X11/xorg.conf.d/00-keyboard.conf
