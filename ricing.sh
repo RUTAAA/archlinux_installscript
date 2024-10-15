@@ -33,7 +33,7 @@ printf "#!/bin/bash\nkillall -q polybar\npolybar mybar 2>&1 | tee -a /tmp/polyba
 chmod +x /home/$1/.config/polybar/launch.sh
 
 printf "\n\n\nRofi - Application Launcher"
-sed -i "s/dmenu_run/rofi --show drun/" /home/$1/.config/sxhkd/sxhkdrc
+sed -i "s/dmenu_run/rofi -show drun/" /home/$1/.config/sxhkd/sxhkdrc
 sed -i "s/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/" /etc/locale.gen
 locale-gen
 
