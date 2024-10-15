@@ -3,7 +3,7 @@ pacman -S --noconfirm xorg-server xorg-xinit ly bspwm sxhkd picom feh polybar ro
 
 printf "\n\n\nX11 - Display Server\n"
 touch /etc/X11/xorg.conf.d/00-keyboard.conf
-echo "Section \"InputClass\"\n\tIdentifier \"system-keyboard\"\n\tMatchIsKeyboard \"on\"\n\tOption \"XkbLayout\" \"fr\"\n\tOption \"XkbModel\" \"pc105\"\n\tOption \"XkbVariant\" \"azerty\"\nEndSection" > /etc/X11/xorg.conf.d/00-keyboard.conf
+echo -e "Section \"InputClass\"\n\tIdentifier \"system-keyboard\"\n\tMatchIsKeyboard \"on\"\n\tOption \"XkbLayout\" \"fr\"\n\tOption \"XkbModel\" \"pc105\"\n\tOption \"XkbVariant\" \"azerty\"\nEndSection" > /etc/X11/xorg.conf.d/00-keyboard.conf
 touch /home/$1/.xinitrc
 head -n -5 /etc/X11/xinit/xinitrc > /home/$1/.xinitrc
 echo "exec bspwm" >> /home/$1/.xinitrc
