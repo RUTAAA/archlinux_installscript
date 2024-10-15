@@ -29,8 +29,9 @@ printf "\n\n\nPolybar - Status Bar\n"
 mkdir /home/$1/.config/polybar
 cp /etc/polybar/config.ini /home/$1/.config/polybar/config.ini
 touch /home/$1/.config/polybar/launch.sh
-printf "#!/bin/bash\nkillall -q polybar\npolybar mybar 2>&1 | tee -a /tmp/polybar.log & disown" > /home/$1/.config/polybar/launch.sh
+printf "#!/bin/bash\nkillall -q polybar\npolybar example 2>&1 | tee -a /tmp/polybar.log & disown" > /home/$1/.config/polybar/launch.sh
 chmod +x /home/$1/.config/polybar/launch.sh
+echo "~/.config/polybar/launch.sh &" >> /home/$1/.config/bspwm/bspwmrc
 
 printf "\n\n\nRofi - Application Launcher"
 sed -i "s/dmenu_run/rofi -show drun/" /home/$1/.config/sxhkd/sxhkdrc
