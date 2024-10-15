@@ -4,8 +4,8 @@ pacman -S --noconfirm xorg ly bspwm sxhkd picom feh polybar rofi wezterm firefox
 printf "\n\n\nX11 - Display Server\n"
 touch /etc/X11/xorg.conf.d/00-keyboard.conf
 echo "Section \"InputClass\"\n\tIdentifier \"system-keyboard\"\n\tMatchIsKeyboard \"on\"\n\tOption \"XkbLayout\" \"fr\"\n\tOption \"XkbModel\" \"pc105\"\n\tOption \"XkbVariant\" \"azerty\"\nEndSection" > /etc/X11/xorg.conf.d/00-keyboard.conf
-cp /etc/X11/xinit/xinitrc /home/$1/.xinitrc
-head -n -5 /home/$1/.xinitrc > /home/$1/.xinitrc
+touch /home/$1/.xinitrc
+head -n -5 /etc/X11/xinit/xinitrc > /home/$1/.xinitrc
 echo "exec bspwm" >> /home/$1/.xinitrc
 
 printf "\n\n\nLy - Display Manager\n"
