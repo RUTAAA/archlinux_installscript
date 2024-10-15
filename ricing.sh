@@ -45,7 +45,6 @@ printf "\n\n\nFirefox - Internet Browser\n"
 touch /home/$1/.config/sxhkd/sxhkdrc_new
 head -n 11 /home/$1/.config/sxhkd/sxhkdrc > /home/$1/.config/sxhkd/sxhkdrc_new
 echo -e "\n# internet browser\nsuper + b\n\tfirefox" >> /home/$1/.config/sxhkd/sxhkdrc_new
-sed -i "s/^/wezterm/" /home/$1/.config/sxhkd/sxhkdrc
 tail -n +12 /home/$1/.config/sxhkd/sxhkdrc >> /home/$1/.config/sxhkd/sxhkdrc_new
 rm /home/$1/.config/sxhkd/sxhkdrc
 mv /home/$1/.config/sxhkd/sxhkdrc_new /home/$1/.config/sxhkd/sxhkdrc
