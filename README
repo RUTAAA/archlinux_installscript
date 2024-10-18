@@ -1,4 +1,8 @@
 TO DO:
+
 chown -R .config/
 chgrp -R .config/
-zsh
+
+zsh setup
+
+not use default configurations but custom ones
