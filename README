@@ -5,4 +5,4 @@ chgrp -R .config/
 
 zsh setup
 
-not use default configurations but custom ones
+not use default configurations but customs ones
