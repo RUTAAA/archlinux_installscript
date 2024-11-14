@@ -1,13 +1,10 @@
 printf "\n\n\nLocalization\n"
 sed -i "s/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/" /etc/locale.gen
 locale-gen
-touch /etc/vconsole.conf
 echo "LANG=fr_FR.UTF-8" > /etc/locale.conf
-touch /etc/vconsole.conf
 echo "KEYMAP=fr" > /etc/vconsole.conf
 
 printf "\n\n\nHostname\n"
-touch /etc/hostname
 echo "archlinux" > /etc/hostname
 
 printf "\n\n\nDatetime\n"
