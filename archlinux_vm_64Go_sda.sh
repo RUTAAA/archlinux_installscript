@@ -7,9 +7,6 @@ read -s -p "Password for new user: " user_password
 echo
 read -p "Configure the defaut rice? [Y/n] " rice
 
-printf "\n\n\nUpdate\n"
-pacman -Sy
-
 printf "\n\n\nDisk\n"
 sfdisk /dev/sda < sda.dump
 mkfs.ext4 /dev/sda2
